@@ -6,6 +6,8 @@ const items_template_path = "out/item_templates.json";
 const inner_page = document.querySelector("#inner-page");
 const navigation_div = document.querySelector("#navigation");
 
+const post_input = document.querySelector("#postvalue");
+
 var itemCreationManager, itemManager, itemNavigation;
 function setup() {
     itemManager = new ItemManager();
@@ -81,6 +83,7 @@ class HTML_navigation {
         xhttp.onreadystatechange = () => {
             if (xhttp.readyState == 4 && xhttp.status == "200") {
                 var Json_response = JSON.parse(xhttp.responseText);
+                post_input.value = Json_response;
                 this.createNavigation(Json_response);
             }
         };
@@ -398,7 +401,7 @@ let ItemManager = function() {
                     this.item_list[mainCategory][category][name_id] = template_data;
                 }
             }
-        } 
+        }
     }
 
     this.printItems = () => {
@@ -414,7 +417,8 @@ let ItemManager = function() {
         }
     }
 
-    this.save = () => {
+    this.save = () => {    
+        post_input.value = JSON.stringify(this.item_list);
         var dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(this.item_list));
         var dlAnchorElem = document.getElementById('downloadAnchorElem');
         dlAnchorElem.setAttribute("href",     dataStr     );

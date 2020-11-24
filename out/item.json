@@ -1,0 +1,69 @@
+{
+    "weapons": {
+        "wrench": {
+            "name": "Clé anglaise",
+            "desc": "Re-visse les boulons et dégomme des tronches",
+            "rarity": "COMMON",
+            "type": "melee",
+            "damage":  20.0,
+            "firerate": 1.0,
+            "reloadtime": 0,
+            "range": 0,
+            "element": "none"
+        }
+    },
+    "pickups": {
+        "currency": {
+            "dollar": {
+                "name": "Dollar",
+                "desc": "L'argent américain, du papier.",
+                "rarity": "COMMON",
+                "stacklimit": 300,
+                "variant": "1980s"
+            }
+        },
+        "food": {
+            "apple": {
+                "name": "Pomme",
+                "desc": "C'est pas une pomme dorée mais c'est déjà ça.",
+                "rarity": "COMMON",
+                "type": "frut",
+                "stacklimit": 64,
+                "rottenchance": 0
+            }
+        },
+        "explodings": {
+            "simple_grenade": {
+                "name": "Grenade simple",
+                "desc": "Tu connais.",
+                "rarity": "COMMON",
+                "type": "grenades",
+                "stacklimit": 20,
+                "radius": 5,
+                "damage": 10,
+                "falloff": 0
+            }
+        }
+    },
+    "actifs": {
+        "soda": {
+            "name": "Soda",
+            "desc": "Hum tasty bubbles.",
+            "rarity": "COMMON",
+            "type": "damage",
+            "amount": 5,
+            "reloadtime": 1,
+            "radius": 0
+        }
+    },
+    "passifs": {
+        "pants": {
+            "name": "Slip",
+            "desc": "Keep it clean.",
+            "rarity": "COMMON",
+            "modifiers": [{"range": ""},  {"damage": ""}, {"element": ""}, 
+                          {"bullet": ""}, {"reload": ""}, {"spread":  ""},
+                          {"speed": ""},  {"health": ""}, {"precision": ""}]
+        }
+    }
+}

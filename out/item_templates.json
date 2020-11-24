@@ -1,0 +1,69 @@
+{
+    "weapons": {
+        "name_id": {
+            "name": "Nom",
+            "desc": "Description",
+            "rarity": "Rareté [COMMON, UNCOMMON, RARE, EPIC]",
+            "type": "[distance, melee]",
+            "damage":  [0, 1000],
+            "firerate": "Vitesse de tir [0.0-10.0, -1]",
+            "reloadtime": "Temps de rechargement [0.0-10.0s] optionnel",
+            "range": "Distance de tir [0.0-100, -1]",
+            "element": "Dégats élémentaires [none, fire, elec, ...]"
+        }
+    },
+    "pickups": {
+        "currency": {
+            "name_id": {
+                "name": "Nom",
+                "desc": "Description",
+                "rarity": "Rareté [COMMON, UNCOMMON, RARE, EPIC]",
+                "stacklimit": "Limite d'empilement [0, 999]",
+                "variant": "Variante d'epoque ?"
+            }
+        },
+        "food": {
+            "name_id": {
+                "name": "Nom",
+                "desc": "Description",
+                "rarity": "Rareté [COMMON, UNCOMMON, RARE, EPIC]",
+                "type": "",
+                "stacklimit": "Limite d'empilement [0, 999]",
+                "rottenchance": "Pourcentage de pourrissage en changeant d'epoque [0-100%, 0-1]"
+            }
+        },
+        "explodings": {
+            "name_id": {
+                "name": "Nom",
+                "desc": "Description",
+                "rarity": "Rareté [COMMON, UNCOMMON, RARE, EPIC]",
+                "type": "",
+                "stacklimit": "Limite d'empilement [0, 999]",
+                "radius": "Rayon d'explosion [0-100]",
+                "damage": "Degats",
+                "falloff": "Dispersion des degats par rapport à la distance [1-4, 0:uniforme]"
+            }
+        }
+    },
+    "actifs": {
+        "name_id": {
+            "name": "Nom",
+            "desc": "Description",
+            "rarity": "Rareté [COMMON, UNCOMMON, RARE, EPIC]",
+            "type": "Type d'actif [damage, heal, drop]",
+            "amount": "Nombre [0-999]",
+            "reloadtime": "Temps de rechargement [0.0-10.0s] optionnel",
+            "radius": "Rayon d'effet [0-100]"
+        }
+    },
+    "passifs": {
+        "name_id": {
+            "name": "Nom",
+            "desc": "Description",
+            "rarity": "Rareté [COMMON, UNCOMMON, RARE, EPIC]",
+            "modifiers": [{"range": "+/-"},  {"damage": "+/-"}, {"element": "+/-"}, 
+                          {"bullet": "+/-"}, {"reload": "+/-"}, {"spread": "+/-"},
+                          {"speed": "+/-"},  {"health": "+/-"}, {"precision": "+/-"}]
+        }
+    }
+}

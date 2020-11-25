@@ -10,19 +10,19 @@ router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname+"/index.html"));
 });
 router.get('/help', (req, res) => {
-    res.sendFile("/help.html");
+    res.sendFile(path.join(__dirname+"/help.html"));
 });
 //Submit new items
 router.post("/submit", (req, res) => {
     //console.log("Oh you are saving the new items, interesting");
     //console.log(req.body.itemjson);
-    saveJSON(path.join(__dirname+"/out/item.json"), req.body.itemjson);
+    saveJSON("/out/item.json", req.body.itemjson);
     res.send("<h1>Items updated</h1><br/><a href='/'>Go back</a>");
     res.redirect('/');
 });
 
 router.post('/save', (req, res) => {
-    saveJSON(path.join(__dirname+"/out/item_tmp.json"), req.body.itemjson);
+    saveJSON("/out/item_tmp.json", req.body.itemjson);
     res.redirect("/");
 });
 

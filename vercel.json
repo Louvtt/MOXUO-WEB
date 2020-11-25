@@ -1,0 +1,8 @@
+{
+    "trailingSlash": true,
+    "routes": [
+        {"src": "/save", "continue": true},
+        {"src": "/help", "continue": true},
+        {"src": "/submit", "continue": true}
+    ]
+}

@@ -1,8 +1,18 @@
 {
     "trailingSlash": true,
     "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/"
+        },
         {"src": "/save", "continue": true},
         {"src": "/help", "continue": true},
         {"src": "/submit", "continue": true}
+    ],
+    "builds": [
+        {
+            "src": "./index.js",
+            "use": "@vercel/node"
+        }
     ]
 }

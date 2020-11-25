@@ -1,0 +1,16 @@
+{
+  "name": "Moxuo",
+  "version": "1.0.0",
+  "description": "Helper for my teammates to create json files for the items.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

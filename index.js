@@ -5,15 +5,6 @@ const path = require("path");
 const PORT = 8080;
 const fs = require('fs');
 
-const jsreport = require('jsreport')({
-    logger: {
-        file: { enabled: false},
-        silent: true
-    },
-    studio: { enabled: false },
-    allowLocalFilesAccess: true
-});
-
 //main site pages
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname+"/index.html"));

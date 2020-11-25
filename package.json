@@ -1,5 +1,5 @@
 {
-  "name": "Moxuo",
+  "name": "moxuo-web",
   "version": "1.0.0",
   "description": "Helper for my teammates to create json files for the items.",
   "main": "index.js",

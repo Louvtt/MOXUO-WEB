@@ -14,9 +14,7 @@ router.get('/help', (req, res) => {
 });
 //Submit new items
 router.post("/submit", (req, res) => {
-    //console.log("Oh you are saving the new items, interesting");
-    //console.log(req.body.itemjson);
-    saveJSON("/out/item.json", req.body.itemjson);
+    saveJSON(path.join(__dirname+"/out/item.json"), req.body.itemjson);
     res.send("<h1>Items updated</h1><br/><a href='/'>Go back</a>");
     res.redirect('/');
 });
@@ -36,9 +34,6 @@ router.get("/js/item-manager.js", (req, res) => {
 });
 //Get favicon
 router.get("/img/favicon.ico", (req, res) => {
-    res.headersSent({
-        'Content-type': 'img/x-icon'
-    });
     res.sendFile(path.join(__dirname+"/img/favicon.ico"));
 });
 //Get json files

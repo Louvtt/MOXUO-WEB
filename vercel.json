@@ -15,5 +15,5 @@
         "index.js": {
           "includeFiles": "out/item.json"
         }
-      }
+    }
 }

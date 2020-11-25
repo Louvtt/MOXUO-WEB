@@ -5,6 +5,23 @@ const path = require("path");
 const PORT = 8080;
 const fs = require('fs');
 
+const jsreport = require('jsreport')({
+    tasks: {
+        allowedModules: '*',
+        strategy: 'in-process'
+    },
+    loadConfig: false,
+    logger: {
+        file: { enabled: false},
+        silent: true
+    },
+    studio: { enabled: false },
+    allowLocalFilesAccess: true,
+    dataDirectory: path.join(os.tmpdir(), 'jsreport'),
+    templatingEngines: {   allowedModules: '*'},
+  
+});
+
 //main site pages
 router.get('/', (req, res) => {
     res.sendFile(path.join(__dirname+"/index.html"));

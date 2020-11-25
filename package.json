@@ -4,6 +4,8 @@
   "description": "Helper for my teammates to create json files for the items.",
   "main": "index.js",
   "dependencies": {
+    "jsreport": "1.10.0",
+    "npm": "^6.4.1",
     "express": "^4.17.1"
   },
   "devDependencies": {},

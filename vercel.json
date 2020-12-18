@@ -1,19 +1,14 @@
 {
-    "builds": [
-        {
-            "src": "./index.js",
-            "use": "@vercel/node"
+
+    "functions": {
+        "index.js": {
+          "includeFiles": ["out/*.json"]
         }
-    ],
+    },
     "routes": [
         {
             "src": "/(.*)",
             "dest": "/"
         }
-    ],
-    "functions": {
-        "index.js": {
-          "includeFiles": ["out/*.json"]
-        }
-    }
+    ]
 }

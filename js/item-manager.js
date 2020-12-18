@@ -221,7 +221,7 @@ var ItemCreation = function() {
     
             if(e.keyCode == 13) { //Enter
                 if(selected_item_name.replace(" ", "") != "") {
-                    console.log("waw1");
+                    // console.log("waw1");
                     var selected_item_name = modal_editing.children[1].value;
                     new_item.classList.add("new-item");
                     new_item.innerHTML = selected_item_name;
@@ -230,6 +230,7 @@ var ItemCreation = function() {
                     list_parent.append(new_item);
                     itemManager.addItem(type, selected_item_name.toLowerCase().replace(" ", "_"), selected_item_name);
                     this.end_item_creation();
+                    this.loadPage(type, selected_item_name.toLowerCase().replace(" ", "_"));
                 }
             }
             else if(e.keyCode == 27) {//Escape 
@@ -402,6 +403,7 @@ let ItemManager = function() {
                 }
             }
         }
+        
     }
 
     this.printItems = () => {

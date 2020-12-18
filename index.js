@@ -61,8 +61,10 @@ function saveJSON(path, stringified_data) {
         //chmod() it
         fs.chmod(path, 0666, (error) => {
             console.log('Changed file permissions');
+            if(error) throw error;
         });
+        console.log('Changed '+path+' with: '+stringified_data);
+        if(err) throw err;
     });
 
-    console.log('Changed '+path+' with: '+stringified_data);
 }

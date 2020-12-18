@@ -423,7 +423,7 @@ let ItemManager = function() {
         var dlAnchorElem = document.getElementById('downloadAnchorElem');
         dlAnchorElem.setAttribute("href",     dataStr     );
         dlAnchorElem.setAttribute("download", "items.json");
-        dlAnchorElem.click();
+        // dlAnchorElem.click();
     }
 }
 

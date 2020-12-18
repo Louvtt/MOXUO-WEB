@@ -16,7 +16,7 @@ router.get('/help', (req, res) => {
 //Submit new items
 router.post("/submit", (req, res) => {
     saveJSON(path.join(__dirname+"/out/item.json"), req.body.itemjson);
-    res.send("<h1>Items updated</h1><br/><a href='/'>Go back</a>");
+    // res.send("<h1>Items updated</h1><br/><a href='/'>Go back</a>");
     res.redirect('/');
 });
 
@@ -59,8 +59,10 @@ function saveJSON(path, stringified_data) {
     if(path && stringified_data != undefined) fs.writeFile(path, stringified_data, (err) => {
         //Since this code executes as root the file being created is read only.
         //chmod() it
-        fs.chmod(fileName, 0666, (error) => {
+        fs.chmod(path, 0666, (error) => {
             console.log('Changed file permissions');
         });
     });
+
+    console.log('Changed '+path+' with: '+stringified_data);
 }

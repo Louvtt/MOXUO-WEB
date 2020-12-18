@@ -1,10 +1,10 @@
 {
-
-    "functions": {
-        "index.js": {
-          "includeFiles": "out/*.json"
+    "builds": [
+        {
+            "src": "./index.js",
+            "use": "@vercel/node"
         }
-    },
+    ],
     "routes": [
         {
             "src": "/(.*)",

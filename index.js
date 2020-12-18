@@ -16,7 +16,11 @@ router.get('/help', (req, res) => {
 //Submit new items
 router.post("/submit", (req, res) => {
     saveJSON(path.join(__dirname+"/out/item.json"), req.body.itemjson);
-    // res.send("<h1>Items updated</h1><br/><a href='/'>Go back</a>");
+    res.send("<h1>Items updated</h1><br/><a href='/'>Go back</a>");
+    res.redirect('/');
+});
+router.get("/submit", (req, res) => {
+    res.send("<h1>Items updated</h1><br/><a href='/'>Go back</a>");
     res.redirect('/');
 });
 
@@ -41,6 +45,9 @@ router.get("/img/favicon.ico", (req, res) => {
 router.get("/out/item.json", (req, res) => {
     res.sendFile(path.join(__dirname+"/out/item.json"));
 });
+router.post("/out/item.json", (req, res) => {
+    res.sendFile(path.join(__dirname+"/out/item.json"));
+});
 router.get("/out/item_templates.json", (req, res) => {
     res.sendFile(path.join(__dirname+"/out/item_templates.json"));
 });
@@ -55,14 +62,16 @@ app.listen(PORT, () => {
 });
 
 
+
 function saveJSON(path, stringified_data) {
+    //Since this code executes as root the file being created is read only.
+    //chmod() it
+    fs.chmod(path, 0666, (error) => {
+        console.log('Changed file permissions');
+        if(error) throw error;
+    });
+
     if(path && stringified_data != undefined) fs.writeFile(path, stringified_data, (err) => {
-        //Since this code executes as root the file being created is read only.
-        //chmod() it
-        fs.chmod(path, 0666, (error) => {
-            console.log('Changed file permissions');
-            if(error) throw error;
-        });
         console.log('Changed '+path+' with: '+stringified_data);
         if(err) throw err;
     });

@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const path = require("path");
-const filesys = require('fs');
+const fs = require('fs');
 const PORT = 8080;
 
 //main site pages
@@ -53,7 +53,11 @@ app.listen(PORT, () => {
 
 
 function saveJSON(path, stringified_data) {
-    if(stringified_data != undefined) filesys.writeFile(path, stringified_data, (err) => {
-        if(err) throw err;
+    if(path && stringified_data != undefined) fs.writeFile(path, stringified_data, (err) => {
+        //Since this code executes as root the file being created is read only.
+        //chmod() it
+        fs.chmod(fileName, 0666, (error) => {
+            console.log('Changed file permissions');
+        });
     });
 }

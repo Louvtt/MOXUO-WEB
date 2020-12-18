@@ -13,5 +13,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "functions": {
+      "index.js": {
+        "includeFiles": ["out/item.json", "out/item_templates.json"]
+      }
+  }
 }

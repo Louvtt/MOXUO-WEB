@@ -10,10 +10,5 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ],
-    "functions": {
-        "index.js": {
-          "includeFiles": ["out/item.json", "out/item_templates.json"]
-        }
-    }
+    ]
 }

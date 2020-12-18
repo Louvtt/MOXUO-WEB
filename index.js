@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const path = require("path");
+const filesys = require('fs');
 const PORT = 8080;
-const fs = require('fs');
 
 //main site pages
 router.get('/', (req, res) => {
@@ -53,7 +53,7 @@ app.listen(PORT, () => {
 
 
 function saveJSON(path, stringified_data) {
-    if(stringified_data != undefined) fs.writeFile(path, stringified_data, (err) => {
+    if(stringified_data != undefined) filesys.writeFile(path, stringified_data, (err) => {
         if(err) throw err;
     });
 }

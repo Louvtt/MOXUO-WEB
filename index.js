@@ -1,4 +1,5 @@
 const express = require("express");
+const bodyParser  = require('body-parser');
 const app = express();
 const router = express.Router();
 const path = require("path");
@@ -44,8 +45,10 @@ router.get("/out/item_templates.json", (req, res) => {
     res.sendFile(path.join(__dirname+"/out/item_templates.json"));
 });
 
-app.use(express.json())
-app.use(express.urlencoded())
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 app.use('/', router);
 app.listen(PORT, () => {
     console.log(`App running on http://localhost:${PORT}`);

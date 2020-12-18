@@ -4,6 +4,8 @@ const app = express();
 const router = express.Router();
 const path = require("path");
 const fs = require('fs');
+var mongoose = require('mongoose');
+var db = mongoose.connect('mongodb://localhost/tasks');
 const PORT = 8080;
 
 //main site pages

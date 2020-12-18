@@ -2,7 +2,7 @@
 
     "functions": {
         "index.js": {
-          "includeFiles": ["out/*.json"]
+          "includeFiles": "out/*.json"
         }
     },
     "routes": [
